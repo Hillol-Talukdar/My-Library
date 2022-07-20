@@ -20,9 +20,12 @@ public class WantToActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_want_to);
 
+        overridePendingTransition(R.anim.in, R.anim.out);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         adapter = new BooksRecViewAdapter(this);
+        adapter.setType("want to read");
         utils = new Util();
 
         recyclerView = (RecyclerView) findViewById(R.id.recView);
@@ -47,5 +50,11 @@ public class WantToActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.close_in, R.anim.close_out);
     }
 }
