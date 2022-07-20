@@ -12,28 +12,28 @@
         android:id="@+id/buttonRelLayout">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnCurReading"
-            android:text="currently Reading"
+            android:text="Add to currently Reading"
             android:layout_marginRight="10dp"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="50dp"/>
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnWantToRead"
-            android:text="Want to Read"
+            android:text="Add to Want to Read"
             android:layout_marginRight="10dp"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="10dp"
             android:layout_below="@id/btnCurReading"/>
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnAlreadyRead"
-            android:text="Already Read"
+            android:text="Add to Already Read"
             android:layout_marginRight="10dp"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="10dp"

@@ -1,5 +1,6 @@
 package com.example.mylibrary;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -23,6 +25,7 @@ public class BookActivity extends AppCompatActivity {
     private TextView bookName;
     private TextView authorName;
     private TextView description;
+    private TextView pageNumber;
 
     private ImageView bookImage;
 
@@ -39,6 +42,8 @@ public class BookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         initWidgets();
 
         Intent intent = getIntent();
@@ -53,6 +58,7 @@ public class BookActivity extends AppCompatActivity {
                 bookName.setText(b.getName());
                 authorName.setText(b.getAuthor());
                 description.setText(b.getDescription());
+                pageNumber.setText("Pages " + b.getPages());
                 Glide.with(this)
                         .asBitmap()
                         .load(b.getImageUrl())
@@ -213,11 +219,30 @@ public class BookActivity extends AppCompatActivity {
         bookName = (TextView) findViewById(R.id.bookName);
         authorName = (TextView) findViewById(R.id.authorName);
         description = (TextView) findViewById(R.id.bookDesc);
+        pageNumber = (TextView) findViewById(R.id.bookPages);
 
         bookImage = (ImageView) findViewById(R.id.bookImage);
 
         btnCurReading = (Button) findViewById(R.id.btnCurReading);
         btnWantToRead = (Button) findViewById(R.id.btnWantToRead);
         btnAlreadyRead = (Button) findViewById(R.id.btnAlreadyRead);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                super.onBackPressed();
+                break;
+            default:
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

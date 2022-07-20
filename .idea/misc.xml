@@ -4,8 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_all_books.xml" value="0.34782608695652173" />
+        <entry key="app/src/main/res/layout/activity_already_read.xml" value="0.34782608695652173" />
         <entry key="app/src/main/res/layout/activity_book.xml" value="0.34782608695652173" />
+        <entry key="app/src/main/res/layout/activity_currently_reading.xml" value="0.34782608695652173" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.34782608695652173" />
+        <entry key="app/src/main/res/layout/activity_want_to.xml" value="0.34782608695652173" />
         <entry key="app/src/main/res/layout/listitem_book_rec_view.xml" value="0.21240942028985507" />
       </map>
     </option>

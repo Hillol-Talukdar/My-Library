@@ -1,5 +1,6 @@
 package com.example.mylibrary;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 
 import java.util.ArrayList;
 
@@ -19,6 +21,8 @@ public class AllBooksActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_books);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Log.d(TAG, "onCreate: started");
 
@@ -46,5 +50,22 @@ public class AllBooksActivity extends AppCompatActivity {
         ArrayList<Book> books = new ArrayList<>();
         books = util.getAllBooks();
         adapter.setBooks(books);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                super.onBackPressed();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }
