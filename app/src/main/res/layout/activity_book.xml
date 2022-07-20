@@ -9,41 +9,100 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true">
+        android:id="@+id/buttonRelLayout">
 
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/bookName"
-            android:text="Book Name"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_centerHorizontal="true"
+            android:id="@+id/btnCurReading"
+            android:text="currently Reading"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="50dp"/>
 
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/authorName"
-            android:layout_below="@id/bookName"
-            android:text="Author Name"
-            android:scrollbarSize="18sp"
-            android:layout_centerHorizontal="true"
-            android:textStyle="italic"/>
+            android:id="@+id/btnWantToRead"
+            android:text="Want to Read"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/btnCurReading"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnAlreadyRead"
+            android:text="Already Read"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/btnWantToRead"/>
 
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@mipmap/ic_launcher"
-            android:id="@+id/bookImage"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/authorName"
-            android:layout_marginTop="30dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/buttonRelLayout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/firstRelLayout">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@mipmap/ic_launcher"
+                android:id="@+id/bookImage" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bookName"
+                android:text="Book Name"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_toRightOf="@+id/bookImage"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="40dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/authorName"
+                android:layout_below="@id/bookName"
+                android:text="Author Name"
+                android:scrollbarSize="18sp"
+                android:textStyle="italic"
+                android:layout_toRightOf="@+id/bookImage"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pages"
+                android:id="@+id/bookPages"
+                android:layout_below="@+id/authorName"
+                android:layout_toRightOf="@id/bookImage"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/bookImage"
+            android:layout_below="@id/firstRelLayout"
             android:id="@+id/bookDesc"
             android:layout_marginTop="20dp"
             android:text="Description"/>
