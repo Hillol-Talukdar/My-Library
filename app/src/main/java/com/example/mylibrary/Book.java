@@ -1,18 +1,28 @@
 package com.example.mylibrary;
 
 public class Book {
+    private int id;
     private String name;
-    private String auther;
+    private String author;
     private int pages;
     private String imageUrl;
     private String description;
 
-    public Book(String name, String auther, int pages, String imageUrl, String description) {
+    public Book(int id, String name, String author, int pages, String imageUrl, String description) {
+        this.id = id;
         this.name = name;
-        this.auther = auther;
+        this.author = author;
         this.pages = pages;
         this.imageUrl = imageUrl;
         this.description = description;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -23,12 +33,12 @@ public class Book {
         this.name = name;
     }
 
-    public String getAuther() {
-        return auther;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setAuther(String auther) {
-        this.auther = auther;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public int getPages() {
@@ -58,9 +68,10 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "name='" + name + '\'' +
-                ", auther='" + auther + '\'' +
-                ", pages='" + pages + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", auther='" + author + '\'' +
+                ", pages=" + pages +
                 ", imageUrl='" + imageUrl + '\'' +
                 ", description='" + description + '\'' +
                 '}';

@@ -2,6 +2,7 @@ package com.example.mylibrary;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,8 +47,9 @@ public class BooksRecViewAdapter extends RecyclerView.Adapter<BooksRecViewAdapte
         holder.bookCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, books.get(position).getName() + " Selected",
-                        Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, BookActivity.class);
+                intent.putExtra("bookId",books.get(position).getId());
+                context.startActivity(intent);
             }
         });
 
